@@ -11,5 +11,5 @@ def normalize0(x):
         return x
 
 @coprocessor(args=["number"], sql="select number from numbers limit 20", returns=["value"])
-def normalize(v):
+def normalize(v) -> vector[i64]:
     return [normalize0(x) for x in v]
